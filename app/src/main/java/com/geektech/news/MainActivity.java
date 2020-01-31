@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         setupViews();
         fetchCurrencies();
         setupListener();
-        spinnerListener();
     }
 
     private void setupViews() {
@@ -53,10 +52,6 @@ public class MainActivity extends AppCompatActivity {
         etCurrent = findViewById(R.id.etCurrent);
         tvResult = findViewById(R.id.tvResult);
 
-
-    }
-
-    public void spinnerListener() {
         spinnerOne.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -80,13 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
-    public String converter(Editable s) {
-
-        double sum = (Double.parseDouble(String.valueOf(s)) / one) * two;
-        return String.valueOf(sum);
-    }
 
     private void setupListener() {
         etCurrent.addTextChangedListener(new TextWatcher() {
@@ -101,11 +92,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    tvResult.setText(converter(s));
-
-                } catch (Exception e) {
-
+                    double sum = (Double.parseDouble(String.valueOf(s)) / one) * two;
+                    tvResult.setText(String.valueOf(sum));
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Ошибка", Toast.LENGTH_LONG).show();
                 }
+
 
             }
 
