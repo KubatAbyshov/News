@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etCurrent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:hint="ВВЕДИТЕ СУММУ"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="80dp" />
+
+    <Spinner
+        android:id="@+id/spinnerOne"
+        style="@style/Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:backgroundTint="#43A047"
+        android:outlineAmbientShadowColor="#43A047"
+        android:outlineSpotShadowColor="#43A047"
+        app:layout_constraintRight_toLeftOf="@id/spinnerTwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etCurrent" />
+
+    <Spinner
+        android:id="@+id/spinnerTwo"
+        style="@style/Widget.AppCompat.Spinner.Underlined"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="80dp"
+        android:backgroundTint="#43A047"
+        android:outlineAmbientShadowColor="#43A047"
+        android:outlineSpotShadowColor="#43A047"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/spinnerOne"
+        app:layout_constraintTop_toBottomOf="@id/etCurrent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintRight_toLeftOf="@id/spinnerTwo"
+        app:layout_constraintLeft_toRightOf="@id/spinnerOne"
+        app:layout_constraintTop_toBottomOf="@id/etCurrent"
+        android:src="@drawable/ic_compare_arrows_black_24dp"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:gravity="center"
+        android:background ="@drawable/stroke"
+        app:layout_constraintTop_toBottomOf="@id/imageView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
